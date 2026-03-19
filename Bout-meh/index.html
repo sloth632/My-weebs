@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLOTH</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+
+:root{
+--hue:210;
+--accent:hsl(var(--hue),100%,65%);
+--accent-soft:hsl(var(--hue),100%,75%);
+--bg1:hsl(var(--hue),60%,10%);
+--bg2:hsl(calc(var(--hue) + 40),60%,14%);
+--bg3:hsl(calc(var(--hue) + 80),60%,18%);
+--card:hsl(var(--hue),60%,20%,0.25);
+--border:hsl(var(--hue),100%,70%,0.4);
+--text:hsl(var(--hue),100%,92%);
+--sub:hsl(var(--hue),70%,75%);
+}
+
+body{
+background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+color:var(--text);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+transition:background 1s linear;
+overflow:hidden;
+}
+
+.container{
+width:100%;
+max-width:500px;
+padding:24px;
+text-align:center;
+backdrop-filter:blur(12px);
+}
+
+.avatar{
+width:115px;
+height:115px;
+border-radius:50%;
+margin:auto;
+border:3px solid var(--accent);
+background:url('https://github.com/sloth632.png') center/cover;
+box-shadow:0 0 40px var(--accent-soft);
+transition:0.5s;
+}
+
+h1{
+margin-top:16px;
+font-size:26px;
+letter-spacing:1px;
+}
+
+.bio{
+font-size:14px;
+color:var(--sub);
+margin:14px 0 22px;
+line-height:1.6;
+}
+
+.section{
+text-align:left;
+font-size:12px;
+color:var(--sub);
+margin:20px 6px 10px;
+letter-spacing:1.5px;
+}
+
+.link{
+display:block;
+text-decoration:none;
+color:var(--text);
+padding:15px;
+margin:12px 0;
+border-radius:16px;
+background:var(--card);
+border:1px solid var(--border);
+backdrop-filter:blur(14px);
+transition:0.3s;
+font-size:14px;
+letter-spacing:0.3px;
+}
+
+.link:hover{
+background:var(--accent);
+color:#0b0f1a;
+transform:scale(1.04);
+box-shadow:0 0 25px var(--accent);
+}
+
+.footer{
+margin-top:26px;
+font-size:12px;
+color:var(--sub);
+opacity:0.8;
+}
+
+@media (max-width:500px){
+h1{font-size:22px}
+.bio{font-size:13px}
+.link{padding:13px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="avatar"></div>
+
+<h1>SLOTH</h1>
+
+<p class="bio">
+Developer focused on anime, manga, and streaming platforms. I build tools, libraries, and web apps. Into robotics and advanced systems.
+</p>
+
+<div class="section">MAIN</div>
+<a class="link" href="https://github.com/sloth632" target="_blank">GitHub</a>
+
+<div class="section">PROJECTS</div>
+<a class="link" href="https://bruce-js-designer.vercel.app/" target="_blank">Bruce JS Designer</a>
+<a class="link" href="https://bruce-scripts-manager.vercel.app/" target="_blank">Bruce Scripts Manager</a>
+<a class="link" href="https://sloth-anime.vercel.app/" target="_blank">Sloth Anime</a>
+<a class="link" href="https://sloth-libary.vercel.app/" target="_blank">Sloth Manga</a>
+<a class="link" href="https://sloth-theatre.vercel.app/" target="_blank">Sloth Theatre</a>
+
+<div class="section">SOCIALS</div>
+<a class="link" href="https://discord.com/users/the.sin.of.sloth" target="_blank">Discord</a>
+<a class="link" href="https://www.tiktok.com/@pink_pineapple33" target="_blank">TikTok</a>
+
+<div class="footer">Copyright 2026 Sloth. All rights reserved.</div>
+
+</div>
+
+<script>
+let hue = 210;
+
+function animateHue(){
+hue += 0.2;
+if(hue > 360) hue = 0;
+document.documentElement.style.setProperty('--hue', hue);
+requestAnimationFrame(animateHue);
+}
+
+animateHue();
+</script>
+
+</body>
+</html>
